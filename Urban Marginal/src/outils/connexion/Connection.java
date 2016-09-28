@@ -16,7 +16,7 @@ public class Connection extends Thread {
 			out=new ObjectOutputStream(socket.getOutputStream());
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
+		} //
 	    
 	}
 }
