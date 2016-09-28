@@ -14,4 +14,4 @@ public class Connection extends Thread {
 	//	out = socket.getOutputStream();
 	}
 }
-//dwfhwd///
+//dwfhwd///wdrgwdgr

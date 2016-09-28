@@ -67,7 +67,7 @@ public class EntreeJeu extends JFrame {
 			}
 		});
 		
-		/////
+		/////wrgwd
 		
 		/**
 		 * Création du bouton "Exit"
