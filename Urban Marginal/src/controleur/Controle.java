@@ -4,6 +4,8 @@ import vue.EntreeJeu; //importation de la classe -> package différent
 import javax.swing.JFrame; //cf. Evenements provenant de la vue
 
 public class Controle {
+	
+	private int res ;
 
 	public static void main(String[] args) {
 		new Controle();
@@ -29,6 +31,8 @@ public class Controle {
 	private void evenementEntreeJeu(Object info) {
 		
 	}
+	
+	
 				//abc
 	
 	
