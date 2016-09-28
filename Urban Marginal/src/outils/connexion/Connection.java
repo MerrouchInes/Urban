@@ -15,9 +15,18 @@ public class Connection extends Thread {
 		try {
 			out=new ObjectOutputStream(socket.getOutputStream());
 		} catch (IOException e) {
-			e.printStackTrace();
-		} //
+			System.out.println("erreur création canal de sortie :" +e);
+			System.exit(0);
+		}
+		
+		try {
+			in = new ObjectInputStream(socket.getInputStream());
+		} catch (IOException e) {
+			System.out.println("erreur création canal d'entrée :" +e);
+			System.exit(0);
+		}
 	    
+		start();
 	}
 }
 //dwfhwd///wdrgwdgr
