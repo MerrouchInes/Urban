@@ -29,7 +29,7 @@ public class Controle {
 	private void evenementEntreeJeu(Object info) {
 		
 	}
-				
+				//abc
 	
 	
 	/* ------------ Evenements provenant du modele ------------ */
