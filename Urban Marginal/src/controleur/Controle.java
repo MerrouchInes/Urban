@@ -3,6 +3,8 @@ package controleur;
 import vue.EntreeJeu; //importation de la classe -> package différent
 import javax.swing.JFrame; //cf. Evenements provenant de la vue
 
+import outils.connexion.ServeurSocket;
+
 public class Controle {
 	
 	private int res ;
@@ -29,17 +31,16 @@ public class Controle {
 	}
 
 	private void evenementEntreeJeu(Object info) {
-		
+		//if(serveur instanceof (Object.parseString(info)) {
+			ServeurSocket serveur = new ServeurSocket(this, 6666) ;
+		}
 	}
-	
-	
-				//abcdwh
 	
 	
 	/* ------------ Evenements provenant du modele ------------ */
 	
 	
-}
+// }
 
 //
 
