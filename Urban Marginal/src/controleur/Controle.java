@@ -31,8 +31,8 @@ public class Controle {
 	}
 
 	private void evenementEntreeJeu(Object info) {
-		//if(serveur instanceof (Object.parseString(info)) {
-			ServeurSocket serveur = new ServeurSocket(this, 6666) ;
+		if ((String) info == "serveur") {
+			new ServeurSocket(this,6666);
 		}
 	}
 	
@@ -40,8 +40,6 @@ public class Controle {
 	/* ------------ Evenements provenant du modele ------------ */
 	
 	
-// }
-
-//
+}
 
 
