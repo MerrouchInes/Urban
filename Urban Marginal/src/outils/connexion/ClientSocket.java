@@ -17,9 +17,9 @@ public class ClientSocket {
 			connexionOk = true ;
 			Connection connect = new Connection(socket, leRecepteur);
 		} catch (UnknownHostException e) { // serveur indisponible
-			JOptionPane.showMessageDialog(null, "ERREUR - Le serveur est indisponible");
+			JOptionPane.showMessageDialog(null, "ERREUR - Le serveur est indisponible" +e);
 		} catch (IOException e) { // erreur entrée/sortie EX: IP incorrecte
-			JOptionPane.showMessageDialog(null, "ERREUR - Problème d'entrée/sortie");
+			JOptionPane.showMessageDialog(null, "ERREUR - Problème d'entrée/sortie" +e);
 		}
 	}
 	/**
