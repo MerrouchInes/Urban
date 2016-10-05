@@ -58,9 +58,9 @@ public class Controle {
 			clientSocket = new ClientSocket ((String) info, 6666, this);
 			if ((String) info == "client") {
 				leJeu = new JeuClient(this) ;
-				frmEntreeJeu.dispose();
 				leJeu.setConnection(connection);
 				frmArene = new Arene();
+				frmEntreeJeu.dispose();								
 				frmChoixJoueur = new ChoixJoueur() ;				
 				frmChoixJoueur.setVisible(true) ;
 			}

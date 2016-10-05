@@ -15,7 +15,7 @@ public class ClientSocket {
 			socket = new Socket(ip, port) ;
 			System.out.println("La connexion au serveur a réussi") ;
 			connexionOk = true ;
-			Connection connect = new Connection(socket, leRecepteur);
+			Connection connection = new Connection(socket, leRecepteur);
 		} catch (UnknownHostException e) { // serveur indisponible
 			JOptionPane.showMessageDialog(null, "ERREUR - Le serveur est indisponible " +e);
 		} catch (IOException e) { // erreur entrée/sortie EX: IP incorrecte

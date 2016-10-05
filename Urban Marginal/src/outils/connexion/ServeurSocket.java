@@ -28,10 +28,10 @@ public class ServeurSocket extends Thread {
 		while (true){
 			try {
 				System.out.println("le serveur attend...");
-				socket=serverSocket.accept();
+				socket = serverSocket.accept();				
 				System.out.println("un client s'est connecté");
-				Connection connect ;
-				connect = new Connection(socket, leRecepteur);
+				Connection connection ;
+				connection = new Connection(socket, leRecepteur);
 			} catch (IOException e) {
 				System.out.println("erreur :" +e);
 				System.exit(0);
@@ -40,4 +40,4 @@ public class ServeurSocket extends Thread {
 	}
 	
 	
-}//
+}
