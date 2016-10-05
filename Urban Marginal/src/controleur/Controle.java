@@ -3,6 +3,7 @@ package controleur;
 import vue.EntreeJeu; //importation de la classe -> package différent
 import javax.swing.JFrame; //cf. Evenements provenant de la vue
 
+import outils.connexion.ClientSocket;
 import outils.connexion.ServeurSocket;
 
 public class Controle {
@@ -34,12 +35,12 @@ public class Controle {
 		if ((String) info == "serveur") {
 			new ServeurSocket(this,6666);
 		}
+		else { 
+			ClientSocket clientSocket ;
+			clientSocket = new ClientSocket ((String) info, 6666, this);
+			clientSocket.isConnexionOk();
 	}
-	
-	
-	/* ------------ Evenements provenant du modele ------------ */
-	
-	
+	}
+
+
 }
-
-

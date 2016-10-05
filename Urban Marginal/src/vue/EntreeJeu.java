@@ -23,7 +23,9 @@ public class EntreeJeu extends JFrame {
 	private void btnStart_clic(){
 		controle.evenementVue(this, "serveur");
 	}
-	
+	private void btnConnect_clic() {
+		controle.evenementVue(this, txtIp.getText()) ;
+	}
 	private Controle controle;
 
 	/**
@@ -65,12 +67,9 @@ public class EntreeJeu extends JFrame {
 			public void mouseClicked(MouseEvent arg0) {
 				btnConnect_clic();
 			}
-			private void btnConnect_clic() {
-				System.out.println("connecte !");
-			}
+			
 		});
-		
-		/////wrgwd
+
 		
 		/**
 		 * Création du bouton "Exit"

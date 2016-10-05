@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 
 public class ClientSocket {
 	private boolean connexionOk = false ;
-	ClientSocket(String ip, int port, Object leRecepteur){ // constructeur de la classe ClientSocket
+	public ClientSocket(String ip, int port, Object leRecepteur){ // constructeur de la classe ClientSocket
 		Socket socket ;
 		
 		try {
@@ -17,9 +17,9 @@ public class ClientSocket {
 			connexionOk = true ;
 			Connection connect = new Connection(socket, leRecepteur);
 		} catch (UnknownHostException e) { // serveur indisponible
-			JOptionPane.showMessageDialog(null, "ERREUR - Le serveur est indisponible" +e);
+			JOptionPane.showMessageDialog(null, "ERREUR - Le serveur est indisponible " +e);
 		} catch (IOException e) { // erreur entrée/sortie EX: IP incorrecte
-			JOptionPane.showMessageDialog(null, "ERREUR - Problème d'entrée/sortie" +e);
+			JOptionPane.showMessageDialog(null, "ERREUR - Problème d'entrée/sortie " +e);
 		}
 	}
 	/**
