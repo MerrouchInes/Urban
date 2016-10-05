@@ -1,10 +1,15 @@
 package modele;
 
+import controleur.Controle;
 import outils.connexion.Connection;
 
 public class JeuClient extends Jeu {
+	
+	JeuClient(Controle controle) {
+		this.controle = super.controle ;
+	}
 
-	@Override
+	@Override // repérage des méthodes abstraites 
 	public void setConnection(Connection connection) {
 		
 	}
