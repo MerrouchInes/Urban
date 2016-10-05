@@ -5,7 +5,7 @@ import outils.connexion.Connection;
 
 public class JeuClient extends Jeu {
 	
-	JeuClient(Controle controle) {
+	public JeuClient(Controle controle) {
 		this.controle = super.controle ;
 	}
 

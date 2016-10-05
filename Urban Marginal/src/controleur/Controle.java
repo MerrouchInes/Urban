@@ -5,6 +5,7 @@ import vue.EntreeJeu; //importation de la classe -> package différent
 import javax.swing.JFrame; //cf. Evenements provenant de la vue
 
 import modele.Jeu;
+import modele.JeuClient;
 import modele.JeuServeur;
 import outils.connexion.ClientSocket;
 import outils.connexion.ServeurSocket;
@@ -50,6 +51,10 @@ public class Controle {
 			ClientSocket clientSocket ;
 			clientSocket = new ClientSocket ((String) info, 6666, this);
 			clientSocket.isConnexionOk();
+			if ((String) info == "client") {
+				leJeu = new JeuClient(this) ;
+			}
+			
 		}
 	}
 
