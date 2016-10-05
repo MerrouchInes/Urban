@@ -113,3 +113,4 @@ public class EntreeJeu extends JFrame {
 		this.controle = controle ;
 	}
 }
+//
