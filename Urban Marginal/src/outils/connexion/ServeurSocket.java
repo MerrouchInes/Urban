@@ -9,9 +9,9 @@ public class ServeurSocket extends Thread {
 	private ServerSocket serverSocket;
 	
 	public ServeurSocket(Object leRecepteur, int port) { // constructeur
-		this.leRecepteur=leRecepteur; // valorisation de la propriété leRecepteur
+		this.leRecepteur = leRecepteur; // valorisation de la propriété leRecepteur
 		try {
-			serverSocket=new ServerSocket(port); // 40=new Int
+			serverSocket = new ServerSocket(port); // 40=new Int
 		} catch (IOException e) { // si le try échoue
 			System.out.println("erreur grave création socket serveur :" +e);
 			System.exit(0);
@@ -30,7 +30,7 @@ public class ServeurSocket extends Thread {
 				System.out.println("le serveur attend...");
 				socket=serverSocket.accept();
 				System.out.println("un client s'est connecté");
-				Connection connect;
+				Connection connect ;
 				connect = new Connection(socket, leRecepteur);
 			} catch (IOException e) {
 				System.out.println("erreur :" +e);

@@ -19,12 +19,17 @@ public class EntreeJeu extends JFrame {
 	private JPanel contentPane;
 	private final JLabel label = new JLabel("New label");
 	private JTextField txtIp;
+	
+	private void btnStart_clic(){
+		controle.evenementVue(this, "serveur");
+	}
+	
 	private Controle controle;
 
 	/**
 	 * Create the frame.
 	 */
-	public EntreeJeu() {
+	public EntreeJeu(Controle controle) {
 		setTitle("Urban Marginal");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -43,9 +48,7 @@ public class EntreeJeu extends JFrame {
 				btnStart_clic();
 			}
 			
-			private void btnStart_clic(){
-				System.out.println("using start button");
-			}
+			
 		});
 		btnStart.setBounds(323, 39, 89, 23);
 		contentPane.add(btnStart);
@@ -108,6 +111,6 @@ public class EntreeJeu extends JFrame {
 		txtIp.setBounds(163, 152, 86, 20);
 		contentPane.add(txtIp);
 		txtIp.setColumns(10);
+		this.controle = controle ;
 	}
 }
-//gfhwdrghwsdtrhwsdhtrwftr

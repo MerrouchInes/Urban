@@ -13,9 +13,9 @@ public class Connection extends Thread {
 	private ObjectInputStream in;
 	private ObjectOutputStream out;
 	Connection(Socket socket, Object leRecepteur) { // constructeur de la classe Connection
-		this.leRecepteur=leRecepteur; // valorisation de la propriété leRecepteur
+		this.leRecepteur = leRecepteur; // valorisation de la propriété leRecepteur
 		try {
-			out=new ObjectOutputStream(socket.getOutputStream()); // création du canal de sortie
+			out = new ObjectOutputStream(socket.getOutputStream()); // création du canal de sortie
 		} catch (IOException e) {
 			System.out.println("erreur création canal de sortie :" +e); //en cas d'échec de la création du canal
 			System.exit(0); // un message d'erreur s'affiche et la fenêtre se ferme
