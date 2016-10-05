@@ -1,6 +1,7 @@
 package controleur;
 
-import vue.Arena;
+import vue.Arene;
+import vue.ChoixJoueur;
 import vue.EntreeJeu; //importation de la classe -> package différent
 import javax.swing.JFrame; //cf. Evenements provenant de la vue
 
@@ -8,6 +9,7 @@ import modele.Jeu;
 import modele.JeuClient;
 import modele.JeuServeur;
 import outils.connexion.ClientSocket;
+import outils.connexion.Connection;
 import outils.connexion.ServeurSocket;
 
 public class Controle {
@@ -16,7 +18,11 @@ public class Controle {
 	
 	private Jeu leJeu ;
 	
-	private Arena frmArene ;
+	private Arene frmArene ;
+	
+	private ChoixJoueur frmChoixJoueur ;
+	
+	private Connection connection ;
 
 	public static void main(String[] args) {
 		new Controle();
@@ -41,18 +47,22 @@ public class Controle {
 
 	private void evenementEntreeJeu(Object info) {
 		if ((String) info == "serveur") {
-			new ServeurSocket(this,6666);
+			new ServeurSocket(this, 6666);
 			leJeu = new JeuServeur(this) ;
 			frmEntreeJeu.dispose();
-			frmArene = new Arena();
+			frmArene = new Arene();
 			frmArene.setVisible(true);
 		}
 		else { 
 			ClientSocket clientSocket ;
 			clientSocket = new ClientSocket ((String) info, 6666, this);
-			clientSocket.isConnexionOk();
 			if ((String) info == "client") {
 				leJeu = new JeuClient(this) ;
+				frmEntreeJeu.dispose();
+				leJeu.setConnection(connection);
+				frmArene = new Arene();
+				frmChoixJoueur = new ChoixJoueur() ;				
+				frmChoixJoueur.setVisible(true) ;
 			}
 			
 		}
