@@ -54,4 +54,13 @@ public class Connection extends Thread {
 		
 	}
 	
+	public void envoi(Object unObjet){
+		try {
+			out.writeObject(unObjet);
+			out.flush();
+		} catch (IOException e) {
+			System.out.println("Erreur canal de sortie: " +e);
+		}
+	}
+		
 }
