@@ -29,11 +29,15 @@ public class ChoixJoueur extends JFrame {
 		contentPane.setLayout(null);
 		setContentPane(contentPane);
 		
-		JLabel lblLblfond = new JLabel("lblFond");
-		lblLblfond.setBounds(0, 0, 400, 275);
+		JLabel lblFond = new JLabel("lblFond");
+		lblFond.setBounds(0, 0, 400, 275);
 		
 		ImageIcon image;
-		lblLblfond.setIcon(image = new ImageIcon("media/fonds/fondchoix.jpg"));
-		contentPane.add(lblLblfond);
+		lblFond.setIcon(new ImageIcon("C:\\Users\\admin\\Desktop\\Versions Urban\\sources TP\\media\\fonds\\fondchoix.jpg"));
+		contentPane.add(lblFond);
+		
+		JLabel lblPrecedent = new JLabel("lblPrecedent");
+		lblPrecedent.setBounds(53, 130, 53, 75);
+		contentPane.add(lblPrecedent);
 	}
-} //
+} 
