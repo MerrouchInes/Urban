@@ -112,4 +112,4 @@ public class EntreeJeu extends JFrame {
 		txtIp.setColumns(10);
 		this.controle = controle ;
 	}
-}
+} //

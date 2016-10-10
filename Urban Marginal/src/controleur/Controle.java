@@ -54,19 +54,17 @@ public class Controle {
 			frmArene.setVisible(true);
 		}
 		else { 
-			ClientSocket clientSocket ;
-			clientSocket = new ClientSocket ((String) info, 6666, this);
-			if ((String) info == "client") {
+			(new ClientSocket ((String) info, 6666, this)).getConnexionOk();
+			
 				leJeu = new JeuClient(this) ;
-				leJeu.setConnection(connection);
+				
 				frmArene = new Arene();
 				frmEntreeJeu.dispose();								
-				frmChoixJoueur = new ChoixJoueur() ;				
+				frmChoixJoueur = new ChoixJoueur(this) ;				
 				frmChoixJoueur.setVisible(true) ;
 			}
 			
 		}
 	}
 
-
-}
+//

@@ -25,9 +25,9 @@ public class ClientSocket {
 	/**
 	 * @return the connexionOk
 	 */
-	public boolean isConnexionOk() { // is... et pas get... car connexionOk est un booléen
+	public boolean getConnexionOk() { // is... et pas get... car connexionOk est un booléen
 		return connexionOk;
 	}
 	
 
-}
+} //
