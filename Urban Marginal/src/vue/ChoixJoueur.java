@@ -10,11 +10,26 @@ import javax.swing.border.EmptyBorder;
 
 import controleur.Controle;
 import javax.swing.JLabel;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class ChoixJoueur extends JFrame {
 
 	private JPanel contentPane;
-
+	
+	private void lblSuivant_clic(){
+		
+	}
+	
+	private void lblPrecedent_clic() {
+		
+	}
+	
+	private void lblGo_clic() {
+		
+	}
+	
+	
 	/**
 	 * Create the frame.
 	 * @param controle 
@@ -33,11 +48,45 @@ public class ChoixJoueur extends JFrame {
 		lblFond.setBounds(0, 0, 400, 275);
 		
 		ImageIcon image;
-		lblFond.setIcon(new ImageIcon("C:\\Users\\admin\\Desktop\\Versions Urban\\sources TP\\media\\fonds\\fondchoix.jpg"));
-		contentPane.add(lblFond);
 		
+				
 		JLabel lblPrecedent = new JLabel("lblPrecedent");
+		lblPrecedent.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				lblPrecedent_clic() ;
+			}
+		});
+
+		
+		JLabel lblSuivant = new JLabel("lblSuivant");
+		lblSuivant.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				lblSuivant_clic();
+			}
+		});
+		
+		JLabel lblGo = new JLabel("lblGo");
+		lblGo.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				lblGo_clic();
+			}
+		});
+		
+		
+		lblGo.setBounds(292, 191, 98, 73);
+		contentPane.add(lblGo);
+
+		
+		lblSuivant.setBounds(281, 130, 53, 75);
+		contentPane.add(lblSuivant);
+		
 		lblPrecedent.setBounds(53, 130, 53, 75);
 		contentPane.add(lblPrecedent);
+		
+		lblFond.setIcon(new ImageIcon("C:\\Users\\admin\\Desktop\\Versions Urban\\sources TP\\media\\fonds\\fondchoix.jpg"));
+		contentPane.add(lblFond);
 	}
 } 
