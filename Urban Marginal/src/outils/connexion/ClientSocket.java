@@ -22,12 +22,14 @@ public class ClientSocket {
 			JOptionPane.showMessageDialog(null, "ERREUR - Problème d'entrée/sortie " +e);
 		}
 	}
+	
 	/**
 	 * @return the connexionOk
 	 */
+	
 	public boolean getConnexionOk() { // is... et pas get... car connexionOk est un booléen
 		return connexionOk;
 	}
 	
 
-} //
+}

@@ -12,7 +12,7 @@ import outils.connexion.ClientSocket;
 import outils.connexion.Connection;
 import outils.connexion.ServeurSocket;
 
-public class Controle {
+public class Controle implements Global {
 	
 	private int res ;
 	
@@ -47,14 +47,13 @@ public class Controle {
 
 	private void evenementEntreeJeu(Object info) {
 		if ((String) info == "serveur") {
-			new ServeurSocket(this, 6666);
+			new ServeurSocket(this, PORT);
 			leJeu = new JeuServeur(this) ;
 			frmEntreeJeu.dispose();
 			frmArene = new Arene();
 			frmArene.setVisible(true);
-		}
-		else { 
-			(new ClientSocket ((String) info, 6666, this)).getConnexionOk();
+		} else { 
+			(new ClientSocket ((String) info, PORT, this)).getConnexionOk();
 			
 				leJeu = new JeuClient(this) ;
 				
@@ -64,7 +63,5 @@ public class Controle {
 				frmChoixJoueur.setVisible(true) ;
 			}
 			
-		}
 	}
-
-//
+}

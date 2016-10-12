@@ -10,18 +10,22 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import controleur.Controle;
+import controleur.Global;
+
 import javax.swing.JLabel;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-public class ChoixJoueur extends JFrame {
+public class ChoixJoueur extends JFrame implements Global {
 
 	private JPanel contentPane;
 	private JTextField txtPseudo;
 	private Cursor cursorDefault = new Cursor(DEFAULT_CURSOR) ; //Instantiation de la classe "Cursor" : Curseur par défaut
 	private Cursor cursorHand = new Cursor(HAND_CURSOR) ; //Curseur "main"
+	private int numPerso ;
+	private JLabel lblPersonnage ;
 	
 	private void lblSuivant_clic(){
 		
@@ -33,6 +37,11 @@ public class ChoixJoueur extends JFrame {
 	
 	private void lblGo_clic() {
 		
+	}
+	
+	private void affichePerso() {
+		lblPersonnage.setIcon(new ImageIcon(PERSO)); // pê à modifier
+		contentPane.add(lblPersonnage);
 	}
 	
 	
@@ -107,6 +116,7 @@ public class ChoixJoueur extends JFrame {
 			}
 		});
 		
+		
 		/**
 		 * Bouton "GO"
 		 */
@@ -153,14 +163,15 @@ public class ChoixJoueur extends JFrame {
 		lblPrecedent.setBounds(53, 130, 53, 50);
 		contentPane.add(lblPrecedent);
 		
-		lblFond.setIcon(new ImageIcon("C:\\Users\\admin\\Desktop\\Versions Urban\\sources TP\\media\\fonds\\fondchoix.jpg"));
+		lblFond.setIcon(new ImageIcon(FONDCHOIX));
 		contentPane.add(lblFond);
 		
-		JLabel lblPersonnage = new JLabel("");
+		lblPersonnage = new JLabel("");
 		lblPersonnage.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPersonnage.setBounds(111, 99, 181, 142);
 		contentPane.add(lblPersonnage);
 		
 		txtPseudo.requestFocus();
+		numPerso = 1 ;
 	}
 } 
