@@ -1,6 +1,7 @@
 package vue;
 
 import java.awt.BorderLayout;
+import java.awt.Cursor;
 import java.awt.EventQueue;
 
 import javax.swing.ImageIcon;
@@ -19,6 +20,8 @@ public class ChoixJoueur extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtPseudo;
+	private Cursor cursorDefault = new Cursor(DEFAULT_CURSOR) ; //Instantiation de la classe "Cursor" : Curseur par défaut
+	private Cursor cursorHand = new Cursor(HAND_CURSOR) ; //Curseur "main"
 	
 	private void lblSuivant_clic(){
 		
@@ -33,8 +36,17 @@ public class ChoixJoueur extends JFrame {
 	}
 	
 	
+	/**
+	 * Création des méthodes qui seront utilisées pour changer la forme des curseurs dans la fenêtre Choice
+	 */
+	
 	private void souris_normale(){
-		contentPane.setCursor(); // A CONTINUER
+		contentPane.setCursor(cursorDefault);
+		
+	}
+	
+	private void souris_doigt(){
+		contentPane.setCursor(cursorHand);
 	}
 	
 	/**
@@ -56,6 +68,9 @@ public class ChoixJoueur extends JFrame {
 		
 		ImageIcon image;
 		
+		/**
+		 * Flèche "Précédent"
+		 */
 				
 		JLabel lblPrecedent = new JLabel("");
 		lblPrecedent.addMouseListener(new MouseAdapter() {
@@ -63,8 +78,18 @@ public class ChoixJoueur extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 				lblPrecedent_clic() ;
 			}
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				souris_doigt() ;
+			}
+			public void mouseExited(MouseEvent e) {
+				souris_normale() ;
+			}
 		});
 
+		/**
+		 * Flèche "Suivant"
+		 */
 		
 		JLabel lblSuivant = new JLabel("");
 		lblSuivant.addMouseListener(new MouseAdapter() {
@@ -72,13 +97,43 @@ public class ChoixJoueur extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 				lblSuivant_clic();
 			}
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				souris_doigt() ;
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				souris_normale() ;
+			}
 		});
+		
+		/**
+		 * Bouton "GO"
+		 */
 		
 		JLabel lblGo = new JLabel("");
 		lblGo.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				lblGo_clic();
+			}
+			
+			/**
+			 * Création de l'événement ─ le curseur passe en "doigt" lorqu'on survole le bouton
+			 */
+			
+			@Override
+			public void mouseEntered(MouseEvent arg0) { 
+				souris_doigt() ;
+			}
+			
+			/**
+			 * Création de l'événement ─ le curseur est normal en-dehors du bouton
+			 */
+			
+			@Override
+			public void mouseExited(MouseEvent e) {
+				souris_normale() ;
 			}
 		});
 		
@@ -92,10 +147,10 @@ public class ChoixJoueur extends JFrame {
 		contentPane.add(lblGo);
 
 		
-		lblSuivant.setBounds(281, 130, 53, 75);
+		lblSuivant.setBounds(281, 130, 53, 50);
 		contentPane.add(lblSuivant);
 		
-		lblPrecedent.setBounds(53, 130, 53, 75);
+		lblPrecedent.setBounds(53, 130, 53, 50);
 		contentPane.add(lblPrecedent);
 		
 		lblFond.setIcon(new ImageIcon("C:\\Users\\admin\\Desktop\\Versions Urban\\sources TP\\media\\fonds\\fondchoix.jpg"));
@@ -105,5 +160,7 @@ public class ChoixJoueur extends JFrame {
 		lblPersonnage.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPersonnage.setBounds(111, 99, 181, 142);
 		contentPane.add(lblPersonnage);
+		
+		txtPseudo.requestFocus();
 	}
 } 
