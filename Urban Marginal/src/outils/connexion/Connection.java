@@ -30,23 +30,28 @@ public class Connection extends Thread {
 	    
 		start();
 	}
+	
+	/**
+	 * Méthode run
+	 */
 	public void run() {
 		boolean inOk = true ;
 		Object reception ;
-		while (inOk = true) {
+		while (inOk == true) {
 			try {
 				reception = in.readObject() ;
 				// 2 catch car 2 erreurs possibles
 			} catch (ClassNotFoundException e) { // type de classe non trouvé
-				System.out.println("erreur de classe: " +e);
+				System.out.println("Erreur de classe: " +e);
 				System.exit(0);
 			} catch (IOException e) { // erreur d'entrée/sortie
-				JOptionPane.showMessageDialog(null, "l'ordinateur distant s'est déconnecté"); // messageBox
 				inOk = false ;
+				JOptionPane.showMessageDialog(null, "L'ordinateur distant s'est déconnecté"); // messageBox
+				
 				try {
 					in.close();
 				} catch (IOException e1) {
-					System.out.println("erreur fermeture canal :" +e1);
+					System.out.println("Erreur fermeture canal :" +e1);
 				}
 			}
 				

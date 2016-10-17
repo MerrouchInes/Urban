@@ -13,7 +13,7 @@ public class ServeurSocket extends Thread {
 		try {
 			serverSocket = new ServerSocket(port); // 40=new Int
 		} catch (IOException e) { // si le try échoue
-			System.out.println("erreur grave création socket serveur :" +e);
+			System.out.println("Erreur grave création socket serveur :" +e);
 			System.exit(0);
 		}
 		start();
@@ -27,13 +27,13 @@ public class ServeurSocket extends Thread {
 		Socket socket;
 		while (true){
 			try {
-				System.out.println("le serveur attend...");
+				System.out.println("Le serveur attend...");
 				socket = serverSocket.accept();				
-				System.out.println("un client s'est connecté");
+				System.out.println("Un client s'est connecté");
 				Connection connection ;
 				connection = new Connection(socket, leRecepteur);
 			} catch (IOException e) {
-				System.out.println("erreur :" +e);
+				System.out.println("Erreur :" +e);
 				System.exit(0);
 			}
 		}
