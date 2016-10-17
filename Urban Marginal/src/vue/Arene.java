@@ -25,4 +25,4 @@ public class Arene extends JFrame {
 		setContentPane(contentPane);
 	}
 
-}
+} //
