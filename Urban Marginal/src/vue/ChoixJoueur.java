@@ -40,8 +40,8 @@ public class ChoixJoueur extends JFrame implements Global {
 	}
 	
 	private void affichePerso() {
-		lblPersonnage.setIcon(new ImageIcon(PERSO)); // pê à modifier
-		contentPane.add(lblPersonnage);
+		
+		lblPersonnage.setIcon(new ImageIcon(PERSO + numPerso + MARCHE + "1" + "d" + "1" + EXTIMAGE));
 	}
 	
 	
@@ -71,9 +71,6 @@ public class ChoixJoueur extends JFrame implements Global {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(null);
 		setContentPane(contentPane);
-		
-		JLabel lblFond = new JLabel("");
-		lblFond.setBounds(0, 0, 400, 275);
 		
 		ImageIcon image;
 		
@@ -163,15 +160,21 @@ public class ChoixJoueur extends JFrame implements Global {
 		lblPrecedent.setBounds(53, 130, 53, 50);
 		contentPane.add(lblPrecedent);
 		
-		lblFond.setIcon(new ImageIcon(FONDCHOIX));
-		contentPane.add(lblFond);
-		
 		lblPersonnage = new JLabel("");
 		lblPersonnage.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPersonnage.setBounds(111, 99, 181, 142);
 		contentPane.add(lblPersonnage);
 		
+		JLabel lblFond = new JLabel("");
+		lblFond.setBounds(0, 0, 400, 275);
+		
+		lblFond.setIcon(new ImageIcon(FONDCHOIX));
+		contentPane.add(lblFond);
+		
 		txtPseudo.requestFocus();
 		numPerso = 1 ;
+		
+		affichePerso() ;
+		
 	}
 } 
