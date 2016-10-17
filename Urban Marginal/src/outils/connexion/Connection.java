@@ -44,7 +44,7 @@ public class Connection extends Thread {
 			} catch (ClassNotFoundException e) { // type de classe non trouvé
 				System.out.println("Erreur de classe: " +e);
 				System.exit(0);
-			} catch (IOException e) { // erreur d'entrée/sortie
+			} catch (IOException e) { // Erreur d'entrée/sortie
 				inOk = false ;
 				JOptionPane.showMessageDialog(null, "L'ordinateur distant s'est déconnecté"); // messageBox
 				
