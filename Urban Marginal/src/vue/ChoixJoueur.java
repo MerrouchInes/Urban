@@ -30,7 +30,7 @@ public class ChoixJoueur extends JFrame implements Global {
 	
 	private void lblPrecedent_clic() {
 		this.numPerso = (this.numPerso + NBPERSOS + 1) % NBPERSOS + 1 ;
-		
+		affichePerso() ;		
 	}
 	
 	private void lblSuivant_clic(){
