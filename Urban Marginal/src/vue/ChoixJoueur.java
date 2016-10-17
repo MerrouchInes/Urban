@@ -27,12 +27,15 @@ public class ChoixJoueur extends JFrame implements Global {
 	private int numPerso ;
 	private JLabel lblPersonnage ;
 	
-	private void lblSuivant_clic(){
+	
+	private void lblPrecedent_clic() {
+		this.numPerso = (this.numPerso + NBPERSOS + 1) % NBPERSOS + 1 ;
 		
 	}
 	
-	private void lblPrecedent_clic() {
-		
+	private void lblSuivant_clic(){
+		this.numPerso = this.numPerso % NBPERSOS + 1 ;
+		affichePerso() ;
 	}
 	
 	private void lblGo_clic() {
@@ -102,6 +105,7 @@ public class ChoixJoueur extends JFrame implements Global {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				lblSuivant_clic();
+				
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
