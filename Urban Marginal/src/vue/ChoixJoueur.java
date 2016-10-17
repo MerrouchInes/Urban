@@ -28,6 +28,7 @@ public class ChoixJoueur extends JFrame implements Global {
 	private Cursor cursorHand = new Cursor(HAND_CURSOR) ; //Curseur "main"
 	private int numPerso ;
 	private JLabel lblPersonnage ;
+	private Controle controle ;
 	
 	/**
 	 * Défilement des personnages
@@ -54,7 +55,7 @@ public class ChoixJoueur extends JFrame implements Global {
 			JOptionPane.showMessageDialog(null, "Le pseudo est obligatoire "); // Si pas de pseudo
 		}
 		else { // Si pseudo renseigné
-			
+			controle.evenementVue(this, "") ;
 		}
 		
 	}
@@ -94,7 +95,8 @@ public class ChoixJoueur extends JFrame implements Global {
 	 * @param controle 
 	 */
 	
-	public ChoixJoueur(Controle controle) {
+	public ChoixJoueur(Controle controle) { // Constructeur
+		this.controle = controle ;
 		setTitle("Choice");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 416, 313);

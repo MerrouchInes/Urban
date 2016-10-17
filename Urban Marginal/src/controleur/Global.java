@@ -22,4 +22,7 @@ public interface Global {
 	public static final Integer NBPERSOS = 3 ; // Nombre de personnages
 	public static final int H_PERSO = 44 ; // Taille image perso (hauteur)
 	public static final int L_PERSO = 39 ; // Taille image perso (largeur)
+	
+	public static final String SEPARE = "~" ;
+	public static final int PSEUDO = 0 ;
 }

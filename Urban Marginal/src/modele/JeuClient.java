@@ -3,6 +3,7 @@ package modele;
 import controleur.Controle;
 import outils.connexion.Connection;
 
+//private Connection connection ;
 public class JeuClient extends Jeu {
 	
 	public JeuClient(Controle controle) {

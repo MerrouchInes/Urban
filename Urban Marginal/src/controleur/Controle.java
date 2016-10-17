@@ -30,7 +30,7 @@ public class Controle implements Global {
 	
 	private EntreeJeu frmEntreeJeu;
 		
-		public Controle(){ //Constructeur
+		public Controle(this){ // Constructeur
 			
 		this.frmEntreeJeu = new EntreeJeu(this); //Cree la frame
 		frmEntreeJeu.setVisible(true); //Rend visible la frame
@@ -42,9 +42,23 @@ public class Controle implements Global {
 		if (uneFrame instanceof EntreeJeu) {
 			evenementEntreeJeu(info);
 		}
+		if (uneFrame instanceof ChoixJoueur) {
+			evenementChoixJoueur(info);
+		}
 			
 	}
-
+	
+	/**
+	 * Méthode evenementChoixJoueur
+	 */
+	private void evenementChoixJoueur (Object info) {
+		
+	}
+	
+	
+	/**
+	 * Méthode evenementEntreeJeu
+	 */
 	private void evenementEntreeJeu(Object info) {
 		if ((String) info == "serveur") {
 			new ServeurSocket(this, PORT);
