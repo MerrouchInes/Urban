@@ -25,4 +25,15 @@ public interface Global {
 	
 	public static final String SEPARE = "~" ;
 	public static final int PSEUDO = 0 ;
+	
+	/**
+	 * ARENE
+	 */
+	
+	public static final int H_ARENE = 600 ;
+	public static final int L_ARENE = 800 ;
+	public static final int H_CHAT = 200 ;
+	public static final int H_SAISIE = 20 ;
+	public static final int MARGE = 5 ; // Elle va servir pour les écarts entre différents objets
+	public static final String FONDARENE = CHEMINFONDS + "fondarene.jpg" ;
 }
