@@ -65,7 +65,7 @@ public class Controle implements Global {
 	 * Méthode evenementChoixJoueur
 	 */
 	private void evenementChoixJoueur (Object info) {
-		
+		((modele.JeuClient)leJeu).envoi(info) ; // Transtypage de l'objet "leJeu" (Jeu -> JeuClient)
 	}
 	
 	

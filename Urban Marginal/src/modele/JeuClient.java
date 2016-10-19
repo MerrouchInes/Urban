@@ -4,7 +4,12 @@ import controleur.Controle;
 import outils.connexion.Connection;
 
 
+
 public class JeuClient extends Jeu {
+	
+	public void envoi(Object info) {
+		super.envoi(connection, info);
+	}
 	
 	public JeuClient(Controle controle) {
 		this.controle = super.controle ;

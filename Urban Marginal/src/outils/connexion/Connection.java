@@ -33,6 +33,7 @@ public class Connection extends Thread {
 		}
 	    
 		start();
+		((controleur.Controle)this.leRecepteur).setConnection(this) ; // Transtypage de l'objet leRecepteur (Object -> Controle)
 	}
 	
 	/**
