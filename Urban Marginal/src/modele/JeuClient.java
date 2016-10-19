@@ -8,14 +8,16 @@ import outils.connexion.Connection;
 public class JeuClient extends Jeu {
 	
 	public void envoi(Object info) {
-		super.envoi(connection, info);
+		super.envoi(this.connection, info);
 	}
 	
-	public JeuClient(Controle controle) {
-		this.controle = super.controle ;
+	public JeuClient(Controle controle) {		
+		super.controle = controle ;
 	}
 	
-private Connection connection ;
+	private Connection connection ;
+
+
 
 	@Override // Repérage des méthodes abstraites 
 	public void setConnection(Connection connection) {

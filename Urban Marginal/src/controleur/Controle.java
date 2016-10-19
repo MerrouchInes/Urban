@@ -84,7 +84,8 @@ public class Controle implements Global {
 		} else { 
 			(new ClientSocket ((String) info, PORT, this)).getConnexionOk();
 			
-				leJeu = new JeuClient(this) ;
+				leJeu = new JeuClient(this) ; // Instanciation de ChoixJoueur
+				leJeu.setConnection(connection);
 				
 				frmArene = new Arene();
 				frmEntreeJeu.dispose();								
