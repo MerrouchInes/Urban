@@ -28,20 +28,33 @@ public class Controle implements Global {
 		new Controle();
 	}
 	
+	
+	
 	private EntreeJeu frmEntreeJeu;
 		
-		public Controle(this){ // Constructeur
+		public Controle(){ // Constructeur
 			
 		this.frmEntreeJeu = new EntreeJeu(this); //Cree la frame
 		frmEntreeJeu.setVisible(true); //Rend visible la frame
 
 		}
 		
-	/* ------------ Evenements provenant de la vue ------------ */
+	public void setConnection(Connection connexion) {
+		this.connection = connexion ;
+	}
+	
+		
+	/**
+	 *  ---------------- Evenements provenant de la vue ----------------
+	 */
+	
+
 	public void evenementVue(Object uneFrame, Object info) {
+		// --------- evenementEntreeJeu ---------
 		if (uneFrame instanceof EntreeJeu) {
 			evenementEntreeJeu(info);
 		}
+		// --------- evenementChoixJoueur ---------
 		if (uneFrame instanceof ChoixJoueur) {
 			evenementChoixJoueur(info);
 		}
@@ -73,7 +86,7 @@ public class Controle implements Global {
 				
 				frmArene = new Arene();
 				frmEntreeJeu.dispose();								
-				frmChoixJoueur = new ChoixJoueur(this) ;				
+				frmChoixJoueur = new ChoixJoueur(this) ; // Instanciation de ChoixJoueur			
 				frmChoixJoueur.setVisible(true) ;
 			}
 			

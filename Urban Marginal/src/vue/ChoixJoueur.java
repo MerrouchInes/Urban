@@ -24,8 +24,8 @@ public class ChoixJoueur extends JFrame implements Global {
 
 	private JPanel contentPane;
 	private JTextField txtPseudo;
-	private Cursor cursorDefault = new Cursor(DEFAULT_CURSOR) ; //Instantiation de la classe "Cursor" : Curseur par défaut
-	private Cursor cursorHand = new Cursor(HAND_CURSOR) ; //Curseur "main"
+	private Cursor cursorDefault = new Cursor(DEFAULT_CURSOR) ; // Instantiation de la classe "Cursor" : Curseur par défaut
+	private Cursor cursorHand = new Cursor(HAND_CURSOR) ; // Curseur "main"
 	private int numPerso ;
 	private JLabel lblPersonnage ;
 	private Controle controle ;
@@ -34,13 +34,13 @@ public class ChoixJoueur extends JFrame implements Global {
 	 * Défilement des personnages
 	 */
 	
-	// ------------- Défilement vers l'arrière
+	// --------- Défilement vers l'arrière ---------
 	private void lblPrecedent_clic() {
 		this.numPerso = (this.numPerso + NBPERSOS + 1) % NBPERSOS + 1 ;
 		affichePerso() ;		
 	}
 	
-	// ------------- Défilement vers l'avant
+	// --------- Défilement vers l'avant ---------
 	private void lblSuivant_clic(){
 		this.numPerso = this.numPerso % NBPERSOS + 1 ;
 		affichePerso() ;
@@ -76,7 +76,7 @@ public class ChoixJoueur extends JFrame implements Global {
 	 */
 	
 	
-	// ------------- Souris normale
+	// --------- Souris normale ---------
 	
 	private void souris_normale(){
 		contentPane.setCursor(cursorDefault);
@@ -84,7 +84,7 @@ public class ChoixJoueur extends JFrame implements Global {
 	}
 	
 	
-	// ------------- Souris "doigt"
+	// --------- Souris "doigt" ---------
 	
 	private void souris_doigt(){
 		contentPane.setCursor(cursorHand);
