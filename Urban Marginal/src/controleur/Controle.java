@@ -23,26 +23,32 @@ public class Controle implements Global {
 	private ChoixJoueur frmChoixJoueur ;
 	
 	private Connection connection ;
-
-	public static void main(String[] args) {
-		new Controle();
-	}
-	
-	
 	
 	private EntreeJeu frmEntreeJeu;
-		
-		public Controle(){ // Constructeur
+	
+	public static void main(String[] args) {
+		new Controle();
+	}	
+	
+	
+	/**
+	 * Constructeur de la classe Controle
+	 */
+	
+	public Controle(){ 
 			
 		this.frmEntreeJeu = new EntreeJeu(this); //Cree la frame
 		frmEntreeJeu.setVisible(true); //Rend visible la frame
 
-		}
+	}
 		
 	public void setConnection(Connection connexion) {
 		this.connection = connexion ;
 	}
 	
+	public void receptionInfo(Connection connection, Object info) {
+		leJeu.reception(connection, info);
+	}
 		
 	/**
 	 *  ---------------- Evenements provenant de la vue ----------------

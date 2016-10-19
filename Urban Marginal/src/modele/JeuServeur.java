@@ -16,7 +16,7 @@ public class JeuServeur extends Jeu{
 
 	@Override
 	public void reception(Connection connection, Object info) {
-		
+		System.out.print(info); // Facultative, n'est la que pour vérifier le transfert des infos
 	}
 
 	@Override

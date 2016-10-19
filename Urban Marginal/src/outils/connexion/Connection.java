@@ -45,6 +45,7 @@ public class Connection extends Thread {
 		while (inOk == true) {
 			try {
 				reception = in.readObject() ;
+				((controleur.Controle) leRecepteur).receptionInfo(this, reception) ;
 				// 2 catch car 2 erreurs possibles
 			} catch (ClassNotFoundException e) { // Type de classe non trouvé
 				System.out.println("Erreur de classe: " +e);
